@@ -1,0 +1,94 @@
+@for $i from 0 through 12 {
+    .flex-grow-#{$i} {
+        flex-grow: #{$i};
+    }
+    .flex-shrink-#{$i} {
+        flex-shrink: #{$i};
+    }
+}
+.flex-parent {
+    display: flex;
+    flex-wrap: nowrap;
+    &.flex-wrap {
+        flex-wrap: wrap;
+    }
+    &.inline-flex {
+        display: inline-flex;
+    }
+    &.flex-row {
+        &-reverse {
+            flex-direction: row-reverse;
+        }
+        flex-direction: row;
+    }
+    &.flex-col {
+        flex-direction: column;
+        &-reverse {
+            flex-direction: column-reverse;
+        }
+    }
+    &.flex-justify {
+        &-start {
+            justify-content: flex-start;
+        }
+        &-end {
+            justify-content: flex-end;
+        }
+        &-center {
+            justify-content: center;
+        }
+        &-around {
+            justify-content: space-around;
+        }
+        &-between {
+            justify-content: space-between;
+        }
+    }
+    &.flex-align {
+        &-center {
+            align-items: center;
+        }
+        &-end {
+            align-items: flex-end;
+        }
+        &-base {
+            align-items: baseline;
+        }
+        &-start {
+            align-items: flex-start;
+        }
+        &-stretch {
+            align-items: stretch;
+        }
+    }
+    .flex-self {
+        &-start {
+            align-self: flex-start;
+        }
+        &-end {
+            align-self: flex-end;
+        }
+        &-center {
+            align-self: flex-center;
+        }
+        &-base {
+            align-self: baseline;
+        }
+        &-stretch {
+            align-self: stretch;
+        }
+    }
+}
+.flex-sm {
+    // if flex sm has left and right spacer at mobile, remove margin
+    .right-spacer {
+        margin-right: 0;
+    }
+    .left-spacer {
+        margin-left: 0;
+    }
+    flex-direction: column;
+}
+
+
+

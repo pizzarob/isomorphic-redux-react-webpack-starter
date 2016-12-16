@@ -1,0 +1,30 @@
+.todo {
+    &, * {
+        box-sizing: border-box;
+    }
+    background-color: #fff;
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 0;
+    lh {
+        background-color: salmon;
+        text-align: center;
+        color: #fff;
+    }
+
+    li, lh {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        list-style: none;
+    }
+
+    li {
+        padding: 10px 5px;
+    }
+}
+

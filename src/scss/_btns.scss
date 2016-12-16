@@ -1,0 +1,25 @@
+.btn {
+    padding: 5px 20px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-1{
+    border-color: #f44242;
+}
+
+.btn-2{
+    border-color: #f4dc42
+}
+
+.btn-3 {
+    border-color: #4286f4;
+}
+
+.btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
