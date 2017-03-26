@@ -1,4 +1,5 @@
 # Redux Server Rendering Starter
+## Now With Hot Module Reloading, Redux Sagas, and React Router 4
 
 ```bash
 yarn install
