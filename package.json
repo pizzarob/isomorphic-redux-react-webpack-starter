@@ -10,7 +10,7 @@
     "dev:server:delay": "run-s delay dev:server:start",
     "delay": "node ./node_modules/npm-delay 10000",
     "dev:server:build": "webpack --config ./webpack/server.js --watch --colors --display-error-details",
-    "dev:server:start": "nodemon ./build/server.js --watch ./build",
+    "dev:server:start": "nodemon ./build/server.js --watch ./src/server --ignore ./src/client",
     "dev:client:build": "node webpack/dev-server.js"
   },
   "repository": {

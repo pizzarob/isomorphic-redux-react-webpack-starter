@@ -2,7 +2,12 @@ import React, { PropTypes } from 'react';
 
 function Todo({ text, completed, onClick }) {
   return (
-    <li>{text}-  {completed ? 'Done' : 'Not Done'}- <button onClick={onClick}>Toggle</button></li>
+    <li>
+      <div className="flex-parent flex-align-center flex-justify-between">
+        <span>{text} - {completed ? 'Done' : 'Not Done'}</span>
+        <button className="btn" onClick={onClick}>Toggle</button>
+      </div>
+    </li>
   );
 }
 
@@ -12,4 +17,4 @@ Todo.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export default Todo
+export default Todo;

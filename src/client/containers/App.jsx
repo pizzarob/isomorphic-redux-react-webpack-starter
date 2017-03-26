@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Home from 'Components/Home';
 import About from 'Components/About';
+import { withRouter } from 'react-router';
 import '../../scss/styles.scss';
 
 class App extends Component {
@@ -22,21 +23,30 @@ class App extends Component {
   render() {
     return (
       <div className={`full-width full-height ${this.props.ui.showBgImage ? 'bg' : ''}`}>
-        <Navigation />
-        <Route path="/" exact component={Home} />
-        <Route path="/about" component={About} />
-        <button onClick={this.handleBgToggle}>Toggle Background</button>
+        <div className="wrap">
+          <Navigation />
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <button style={{ margin: 'auto' }} className="btn" onClick={this.handleBgToggle}>Toggle Background</button>
+        </div>
       </div>
     );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onToggleBg(bool) {
-      dispatch(dispatchAction(actions.UPDATE_UI, { showBgImage: bool }));
-    }
-  }
-}
+App.propTypes = {
+  onToggleBg: React.PropTypes.func,
+  ui: React.PropTypes.object,
+};
 
-export default connect(state => ({ ui: state.ui }), mapDispatchToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  onToggleBg(bool) {
+    dispatch(dispatchAction(actions.UPDATE_UI, { showBgImage: bool }));
+  },
+});
+
+const mapStateToProps = state => ({
+  ui: state.ui,
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

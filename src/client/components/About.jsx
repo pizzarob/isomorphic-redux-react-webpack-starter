@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class About extends Component {
-  render() {
-    return (
-      <div>
-        <h1>ABOUT</h1>
-      </div>
-    );
-  }
+function About() {
+  return (
+    <div>
+      <h1>ABOUT</h1>
+      <p>This starter is using React, Redux, React Router 4, Redux Sagas, and Webpack Hot Module Reloading.</p>
+    </div>
+  );
 }
 
 export default About;

@@ -7,7 +7,7 @@ import makeStore from 'Store';
 import sagas from 'Sagas';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
-import App from 'Components/App';
+import App from 'Containers/App';
 import { AppContainer } from 'react-hot-loader';
 
 const logger = createLogger();
@@ -40,9 +40,10 @@ const render = Component => {
 
 render(App);
 
-if (module.hot && process.env.NODE_ENV === 'development') {
-  module.hot.accept('./components/App', () => {
-    render(App);
+if (module.hot && process.env.NODE_ENV) {
+  module.hot.accept('Containers/App', () => {
+    const NextApp = require('Containers/App').default; //eslint-disable-line
+    render(NextApp);
   });
 }
 

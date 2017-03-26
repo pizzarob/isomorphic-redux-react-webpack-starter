@@ -1,18 +1,20 @@
 const initialState = {
-  ui: {},
+  ui: {
+    showBgImage: true,
+  },
   todos: [
     {
-      text: 'Kick Ass',
+      text: 'Get HMR Working',
       id: 1,
       completed: false,
     },
     {
-      text: 'Take Names',
+      text: 'Refactor To React Router 4',
       id: 2,
       completed: false,
     },
     {
-      text: 'Write Code',
+      text: 'Sleep',
       id: 3,
       completed: false,
     },

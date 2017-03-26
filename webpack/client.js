@@ -23,12 +23,12 @@ const clientConfig = base({
     },
     output: Object.assign(defaults.output, {
       path: outputPath,
-      publicPath: `${'http://localhost'}:${process.env.DEV_SERVER_PORT}`,
+      publicPath: `${'http://localhost'}:${process.env.DEV_SERVER_PORT}/`,
     }),
     devServer: {
       hot: true,
       contentBase: outputPath,
-      publicPath: `${'http://localhost'}:${process.env.DEV_SERVER_PORT}`,
+      publicPath: `${'http://localhost'}:${process.env.DEV_SERVER_PORT}/`,
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin(),

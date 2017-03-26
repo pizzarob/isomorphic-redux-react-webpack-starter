@@ -1,7 +1,7 @@
 import express from 'express';
 import React from 'react';
 import html from './html';
-import App from 'Components/App';
+import App from 'Containers/App';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { Provider } from 'react-redux';
@@ -35,5 +35,5 @@ app.use((req, res, next) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`App listening on port ${process.env.PORT || 3000}`);
+  console.log(`App listening on port ${process.env.PORT || 3000}`); //eslint-disable-line
 });

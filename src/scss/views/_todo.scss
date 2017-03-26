@@ -2,18 +2,15 @@
     &, * {
         box-sizing: border-box;
     }
-    background-color: #fff;
     display: block;
     max-width: 500px;
     width: 100%;
-    margin: auto;
+    margin: 20px auto 50px;
     border: 1px solid #eee;
     border-radius: 5px;
     padding: 0;
     lh {
-        background-color: salmon;
         text-align: center;
-        color: #fff;
     }
 
     li, lh {
