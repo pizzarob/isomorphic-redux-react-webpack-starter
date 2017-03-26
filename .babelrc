@@ -1,0 +1,25 @@
+{
+    "presets": [["es2015", {"loose": true}], "react", "stage-0"],
+    "plugins": [
+        // ["module-resolver", {
+        //     "root": ["./src"],
+        //     "alias": {
+        //         "components": "client/components",
+        //         "types": "client/types.js",
+        //         "ui": "client/components/ui",
+        //         "actions": "client/actions",
+        //         "containers": "client/containers",
+        //         "reducers": "client/reducers",
+        //         "utils": "client/utils",
+        //         "constants": "client/constants.js",
+        //         "store": "client/store.js",
+        //         "svg": "client/svg",
+        //         "widgets": "client/components/widgets",
+        //         "schemas": "server/database/schemas",
+        //         "query": "server/queryUtils"
+        //     }
+        // }],
+        ["react-hot-loader/babel"],
+        ["transform-runtime"]
+    ]
+}

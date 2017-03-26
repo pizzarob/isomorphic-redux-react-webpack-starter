@@ -1,4 +1,4 @@
-# Isomorphic Redux, React, and Webpack Starter
+# Redux Server Rendering Starter
 
 ```bash
 yarn install

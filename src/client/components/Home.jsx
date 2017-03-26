@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import TodoList from 'containers/TodoContainer';
+import TodoList from 'Containers/TodoContainer';
 
 class Home extends Component {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    render() {
-        return (
-            <div>
-                <h1>Home</h1>
-                <TodoList />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <h1>Home</h1>
+        <TodoList />
+      </div>
+    );
+  }
 }
 
 export default Home;

@@ -1,6 +1,8 @@
 
 export default function html(routerWithContext, props) {
-    return `
+  const filename = '/client.js';
+  const src = process.env.NODE_ENV !== 'production' ? `http://localhost:${process.env.DEV_SERVER_PORT}${filename}` : filename;
+  return `
         <html>
             <head>
                 <meta charSet="utf-8" />
@@ -14,7 +16,7 @@ export default function html(routerWithContext, props) {
                 <script>
                     window.__INITIAL_STATE__ = ${JSON.stringify(props)};
                 </script>
-                <script src='/client.js' defer></script>
+                <script src="${src}" defer></script>
             </body>
         </html>
     `;

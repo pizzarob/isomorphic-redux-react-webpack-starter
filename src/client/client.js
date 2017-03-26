@@ -1,16 +1,48 @@
-import { match, Router, browserHistory as history } from 'react-router';
-import routes from './components/Routes';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import React from 'react';
 import { Provider } from 'react-redux';
-import makeStore from './store';
+import { createLogger } from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
+import makeStore from 'Store';
+import sagas from 'Sagas';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
+import App from 'Components/App';
+import { AppContainer } from 'react-hot-loader';
 
-const store = makeStore(window.__INITIAL_STATE__);
+const logger = createLogger();
+const sagaMiddleware = createSagaMiddleware();
+const history = createHistory();
 
-match({ history, routes }, (error, redirectLocation, renderProps) => {
-    render(
-        <Provider store={store}>
-            <Router {...renderProps} />
-        </Provider>,
-        document.getElementById('app'));
-});
+const routeMiddleware = routerMiddleware(history);
+
+const store = makeStore(
+  window.__INITIAL_STATE__,
+  logger,
+  sagaMiddleware,
+  routeMiddleware,
+);
+
+sagaMiddleware.run(sagas);
+
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Component />
+        </ConnectedRouter>
+      </Provider>
+    </AppContainer>,
+    document.getElementById('app')
+  );
+};
+
+render(App);
+
+if (module.hot && process.env.NODE_ENV === 'development') {
+  module.hot.accept('./components/App', () => {
+    render(App);
+  });
+}
+
