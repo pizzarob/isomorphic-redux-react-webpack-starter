@@ -2,17 +2,17 @@ const initialState = {
   ui: {},
   todos: [
     {
-      text: 'Do something cool.',
+      text: 'Kick Ass',
       id: 1,
       completed: false,
     },
     {
-      text: 'Contribute.',
+      text: 'Take Names',
       id: 2,
       completed: false,
     },
     {
-      text: 'Have faith.',
+      text: 'Write Code',
       id: 3,
       completed: false,
     },
