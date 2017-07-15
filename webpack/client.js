@@ -18,6 +18,7 @@ const clientConfig = base({
       client: [
         `webpack-hot-middleware/client?path=${'http://localhost'}:${process.env.DEV_SERVER_PORT}/__webpack_hmr`,
         'react-hot-loader/patch',
+        'babel-polyfill',
         './src/client/client.js',
       ],
     },
